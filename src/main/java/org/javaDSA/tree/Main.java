@@ -23,5 +23,16 @@ public class Main {
         System.out.println(bst.search(16));
         System.out.println(bst.search(20));
         System.out.println(bst.search(100));
+
+        System.out.println(bst.search(0));
+        System.out.println(bst.search(5));
+        System.out.println(bst.search(15));
+        bst.rInsert(5);
+        bst.rInsert(10);
+        bst.printInOrder(bst.getRoot());
+        System.out.println();
+        System.out.println(bst.findMin());
+        bst.rDelete(10);
+        bst.printInOrder(bst.getRoot());
     }
 }
