@@ -12,7 +12,14 @@ public class Main {
         bst.insert(18);
         bst.insert(16);
         bst.insert(20);
+        System.out.println(bst.bfs());
+        System.out.println();
+        bst.preOrder(bst.getRoot());
+        System.out.println();
         bst.printInOrder(bst.getRoot());
+        System.out.println();
+        bst.postOrder(bst.getRoot());
+        System.out.println();
         System.out.println(bst.search(10));
         System.out.println(bst.search(5));
         System.out.println(bst.search(15));

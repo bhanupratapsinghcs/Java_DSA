@@ -1,5 +1,9 @@
 package org.javaDSA.tree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     public static class Node{
         int data;
@@ -161,5 +165,42 @@ public class BinarySearchTree {
 
     public void rDelete(int data){
         root = rDelete(root, data);
+    }
+
+    public ArrayList<Integer> bfs(){
+        ArrayList<Integer> result = new ArrayList<>();
+        if(root == null){
+            return result;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            Node current = queue.remove();
+            result.add(current.data);
+            if(current.left != null){
+                queue.add(current.left);
+            }
+            if(current.right != null){
+                queue.add(current.right);
+            }
+        }
+        return result;
+    }
+
+    public void preOrder(Node node){
+        if(node == null)
+            return;
+        System.out.print(node.data + " ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    public void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.print(node.data + " ");
     }
 }
