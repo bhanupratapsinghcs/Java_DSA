@@ -115,3 +115,28 @@ public class ShrunkArray {
 //        }
 //    }
 //}
+
+//private static List<String> getShrunkArray2Wrong(List<String> inputArray, int burstLength){
+//    List<String> result = new ArrayList<>();
+//    int n = inputArray.size();
+//    if(n == 1){
+//        result.add(inputArray.get(0));
+//        return result;
+//    }
+//    int burstCounter = 1;
+//    int sameAsPrevious = 0;
+//    for(int i = 1; i < n; i++){
+//        String previousString = inputArray.get(i-1);
+//        String currentString = inputArray.get(i);
+//        if( previousString.equals(currentString)){
+//            if(burstCounter < burstLength){
+//                result.add(currentString);
+//                burstCounter++;
+//            }
+//        }else{
+//            result.add(currentString);
+//            burstCounter++;
+//        }
+//    }
+//    return result;
+//}

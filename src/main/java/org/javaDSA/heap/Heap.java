@@ -43,10 +43,10 @@ public class Heap {
             return null;
         }
         if(heap.size() == 1){
-            return heap.remove(0);
+            return heap.removeFirst();
         }
-        int maxValue = heap.get(0) ;
-        heap.set(0, heap.remove(heap.size() - 1));
+        int maxValue = heap.getFirst() ;
+        heap.set(0, heap.removeLast());
         sinkDown(0);
         return maxValue;
     }

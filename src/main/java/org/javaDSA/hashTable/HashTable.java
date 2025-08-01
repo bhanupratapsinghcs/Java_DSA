@@ -46,7 +46,7 @@ public class HashTable {
             table[index] = newNode;
         }else{
             Node current = table[index];
-            while(current != null){
+            while(current.next != null){
                 if(current.key.equals(key)){
                     current.value = value;
                     return;
