@@ -93,9 +93,9 @@ public class DoublyLinkedList {
         if(head == null){
             head = newNode;
             tail = newNode;
+            return;
         }
         newNode.next = head;
-        newNode.prev = null;
         head.prev = newNode;
         head = newNode;
         length++;
@@ -141,9 +141,6 @@ public class DoublyLinkedList {
         if(current != null){
             current.data = data;
         }
-        if (current == null){
-            System.out.println("The index is out of range.");
-        }
     }
 
     // Insert a node at a specific index
@@ -153,12 +150,10 @@ public class DoublyLinkedList {
         }
         if (index == 0){
             prepend(data);
-            length++;
             return;
         }
         if (index == length){
             append(data);
-            length++;
             return;
         }
         Node newNode = new Node(data);
@@ -174,6 +169,7 @@ public class DoublyLinkedList {
     public Node remove(int index){
         if(index < 0 || index >= length){
             System.out.println("The index is out of range.");
+            return null;
         }
         if(index == 0){
             return removeFirst();

@@ -10,6 +10,18 @@ public class MaxRepeatingSub {
     }
 
     private static int maxRepeating(String sequence, String word) {
-        return 0;
+        int count = 0;
+        StringBuilder sb = new StringBuilder();
+
+        while (sb.length() < sequence.length()) {
+            sb.append(word);
+            if (sequence.startsWith(sb.toString())) {
+                count++;
+            } else {
+                break;
+            }
+        }
+
+        return count;
     }
 }

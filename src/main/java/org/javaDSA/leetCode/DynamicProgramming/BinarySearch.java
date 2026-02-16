@@ -18,6 +18,24 @@ public class BinarySearch {
         return binarySearchRecursive(arr, mid + 1, right, x);
     }
 
+    public static int binarySearchIterative(int[] arr, int x){
+        int left = 0;
+        int right = arr.length -1;
+        while(left <= right){
+            int mid = left + (right - left) / 2;
+
+            if(arr[mid] == x){
+                return mid;
+            }
+            if(arr[mid] < x){
+                left = mid + 1;
+            }else{
+                right = mid - 1;
+            }
+        }
+        return -1; // Element not found
+    }
+
     public static void main(String[] args) {
         int[] arr = {2, 3, 4, 10, 40};
         int x = 10;
@@ -31,10 +49,13 @@ public class BinarySearch {
         int[] arr2 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int x2 = 9;
         int result2 = binarySearchRecursive(arr2, 0, arr2.length - 1, x2);
+        int result3 = binarySearchIterative(arr2, x2);
         if(result2 == -1){
             System.out.println("Element not found in the array");
         } else {
             System.out.println("Element found at index: " + result2);
+            System.out.println("Element found at index (Iterative): " + result3);
         }
+
     }
 }
