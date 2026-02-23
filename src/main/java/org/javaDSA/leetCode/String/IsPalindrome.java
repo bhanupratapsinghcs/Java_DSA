@@ -8,7 +8,16 @@ public class IsPalindrome {
     }
 
     private static boolean isPalindrome(String s) {
-        System.out.println(26%26);
-        return false;
+        String filterdString = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        int left = 0;
+        int right = filterdString.length() - 1;
+        while(left < right){
+            if(filterdString.charAt(left) != filterdString.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 }
