@@ -1,6 +1,6 @@
 package org.javaDSA.leetCode.String;
 
-public class LongestPalindrome {
+public class LongestPalindromeTUF {
     public static void main(String[] args) {
         String s = "babab";
         System.out.println(longestPalindrome(s));
